@@ -2,5 +2,6 @@
 
 # Complete 7 Stars And I Will Upload kiteAi Testnet Script
 
-![image](https://github.com/user-attachments/assets/9076e622-0af0-428c-8218-1b5d03fded16)
+![image](https://github.com/user-attachments/assets/8a01d37e-754c-4df2-9915-eed78aa8571e)
+
 
