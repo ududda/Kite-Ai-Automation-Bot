@@ -873,7 +873,7 @@ async function main() {
   }
 
   if (accounts.length === 0) {
-    console.log(chalk.red('✗ Tidak ada akun valid di accounts.txt!'));
+    console.log(chalk.red('✗ No valid accounts found in accounts.txt!'));
     rl.close();
     return;
   }
