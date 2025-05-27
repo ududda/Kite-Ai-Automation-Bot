@@ -142,7 +142,7 @@ async function getSmartAccountAddress(eoa, proxy = null) {
     await clearConsoleLine();
     clearTimeout(spinTimeout);
     await clearConsoleLine();
-    console.log(chalk.red(` ┊ ✗ Gagal mengambil smart account address: ${err.message}`));
+    console.log(chalk.red(` ┊ ✗ failed mengambil smart account address: ${err.message}`));
     await sleep(500);
     throw err;
   } finally {
@@ -197,7 +197,7 @@ async function authenticate(eoa, privateKey, proxy = null, retryCount = 0) {
     await clearConsoleLine();
     clearTimeout(spinTimeout);
     await clearConsoleLine();
-    console.log(chalk.green(` ┊ ✓ Autentikasi berhasil: aa_address=${response_aa_address.slice(0, 8)}...`));
+    console.log(chalk.green(` ┊ ✓ Authentication successful: aa_address=${response_aa_address.slice(0, 8)}...`));
     await sleep(500);
     return { aa_address: response_aa_address, access_token };
   } catch (err) {
@@ -205,14 +205,14 @@ async function authenticate(eoa, privateKey, proxy = null, retryCount = 0) {
       await clearConsoleLine();
       clearTimeout(spinTimeout);
       await clearConsoleLine();
-      process.stdout.write(chalk.cyan(` ┊ → Mengautentikasi [Retry ke-${retryCount + 1}/${maxRetries}] ${spinChars[spinIndex]}\r`));
+      process.stdout.write(chalk.cyan(` ┊ → MengAuthentication [Retry ke-${retryCount + 1}/${maxRetries}] ${spinChars[spinIndex]}\r`));
       await sleep(5000);
       return authenticate(eoa, privateKey, proxy, retryCount + 1);
     }
     await clearConsoleLine();
     clearTimeout(spinTimeout);
     await clearConsoleLine();
-    console.log(chalk.red(` ┊ ✗ Gagal autentikasi: ${err.message}`));
+    console.log(chalk.red(` ┊ ✗ failed autentikasi: ${err.message}`));
     await sleep(500);
     throw err;
   } finally {
@@ -263,7 +263,7 @@ async function login(eoa, aa_address, access_token, proxy = null, retryCount = 0
       await sleep(5000);
       return login(eoa, aa_address, access_token, proxy, retryCount + 1);
     }
-    spinner.fail(chalk.red(` ┊ ✗ Gagal login: ${err.message}`));
+    spinner.fail(chalk.red(` ┊ ✗ failed login: ${err.message}`));
     await sleep(500);
     throw err;
   } finally {
@@ -349,7 +349,7 @@ async function chatWithAI(access_token, service_id, message, proxy = null, retry
     await sleep(500);
     return fullResponse;
   } catch (err) {
-    spinner.fail(chalk.red(` ┊ ✗ Gagal chat: ${err.message}`));
+    spinner.fail(chalk.red(` ┊ ✗ Chat failed: ${err.message}`));
     await sleep(500);
     if (retryCount < maxRetries - 1) {
       return chatWithAI(access_token, service_id, message, proxy, retryCount + 1);
@@ -399,7 +399,7 @@ async function submitReport(aa_address, service_id, message, aiResponse, access_
       await sleep(5000);
       return submitReport(aa_address, service_id, message, aiResponse, access_token, proxy, retryCount + 1);
     }
-    spinner.fail(chalk.red(` ┊ ✗ Gagal Submit Report: ${err.message}`));
+    spinner.fail(chalk.red(` ┊ ✗ failed Submit Report: ${err.message}`));
     await sleep(500);
     throw err;
   } finally {
@@ -436,7 +436,7 @@ async function getInference(reportId, access_token, proxy = null, retryCount = 0
       }
       throw new Error('tx_hash tidak ditemukan setelah semua retry');
     }
-    spinner.succeed(chalk.green(` ┊ ✓ Tx hash diterima: ${txHash}`));
+    spinner.succeed(chalk.green(` ┊ ✓ Tx hash accepted: ${txHash}`));
     await sleep(500);
     return txHash;
   } catch (err) {
@@ -445,7 +445,7 @@ async function getInference(reportId, access_token, proxy = null, retryCount = 0
       await sleep(20000);
       return getInference(reportId, access_token, proxy, retryCount + 1);
     }
-    spinner.fail(chalk.red(` ┊ ✗ Gagal mengambil Tx Hash: ${err.message}`));
+    spinner.fail(chalk.red(` ┊ ✗ failed mengambil Tx Hash: ${err.message}`));
     await sleep(500);
     throw err;
   } finally {
@@ -477,7 +477,7 @@ async function getWalletInfo(access_token, proxy = null, retryCount = 0) {
     if (!username || rank === undefined || totalXpPoints === undefined) {
       throw new Error('Invalid response: username, rank, or totalXpPoints missing');
     }
-    spinner.succeed(chalk.green(` ┊ ✓ Info wallet diterima: ${username.slice(0, 8)}...`));
+    spinner.succeed(chalk.green(` ┊ ✓ Info wallet accepted: ${username.slice(0, 8)}...`));
     await sleep(500);
     return { username, rank, totalXpPoints };
   } catch (err) {
@@ -486,7 +486,7 @@ async function getWalletInfo(access_token, proxy = null, retryCount = 0) {
       await sleep(5000);
       return getWalletInfo(access_token, proxy, retryCount + 1);
     }
-    spinner.fail(chalk.red(` ┊ ✗ Gagal mengambil info wallet: ${err.message}`));
+    spinner.fail(chalk.red(` ┊ ✗ failed mengambil info wallet: ${err.message}`));
     await sleep(500);
     throw err;
   } finally {
@@ -531,7 +531,7 @@ async function createQuiz(eoa, access_token, proxy = null, retryCount = 0) {
       await sleep(5000);
       return createQuiz(eoa, access_token, proxy, retryCount + 1);
     }
-    spinner.fail(chalk.red(` ┊ ✗ Gagal membuat daily quiz: ${err.message}`));
+    spinner.fail(chalk.red(` ┊ ✗ failed membuat daily quiz: ${err.message}`));
     await sleep(500);
     throw err;
   } finally {
@@ -580,7 +580,7 @@ async function getQuiz(quiz_id, eoa, access_token, proxy = null, retryCount = 0)
       await sleep(5000);
       return getQuiz(quiz_id, eoa, access_token, proxy, retryCount + 1);
     }
-    spinner.fail(chalk.red(` ┊ ✗ Gagal mengambil jawaban quiz: ${err.message}`));
+    spinner.fail(chalk.red(` ┊ ✗ failed mengambil jawaban quiz: ${err.message}`));
     await sleep(500);
     throw err;
   } finally {
@@ -626,7 +626,7 @@ async function submitQuiz(quiz_id, question_id, answer, eoa, access_token, proxy
       await sleep(5000);
       return submitQuiz(quiz_id, question_id, answer, eoa, access_token, proxy, retryCount + 1);
     }
-    spinner.fail(chalk.red(` ┊ ✗ Gagal mengirim jawaban quiz: ${err.message}`));
+    spinner.fail(chalk.red(` ┊ ✗ failed mengirim jawaban quiz: ${err.message}`));
     await sleep(500);
     throw err;
   } finally {
@@ -666,7 +666,7 @@ async function getRandomTransactionHash(proxy = null, retryCount = 0) {
     if (!transactions || transactions.length === 0) throw new Error('Tidak ada transaksi ditemukan di blok terbaru');
     transactionHashCache = transactions.map(tx => tx.hash).slice(0, 50);
     const randomIndex = crypto.randomInt(0, transactionHashCache.length);
-    spinner.succeed(chalk.green(` ┊ ✓ Hash transaksi diterima`));
+    spinner.succeed(chalk.green(` ┊ ✓ Transaction hash received`));
     await sleep(500);
     return transactionHashCache[randomIndex];
   } catch (err) {
@@ -675,7 +675,7 @@ async function getRandomTransactionHash(proxy = null, retryCount = 0) {
       await sleep(5000);
       return getRandomTransactionHash(proxy, retryCount + 1);
     }
-    spinner.fail(chalk.red(` ✗ Gagal mengambil hash transaksi: ${err.message}`));
+    spinner.fail(chalk.red(` ✗ failed mengambil hash transaksi: ${err.message}`));
     await sleep(500);
     return '0x0000000000000000000000000000000000000000000000000000000000000000';
   } finally {
@@ -716,7 +716,7 @@ function startCountdown(nextRunTime) {
     const hours = Math.floor(timeLeft.asHours()).toString().padStart(2, '0');
     const minutes = Math.floor(timeLeft.asMinutes() % 60).toString().padStart(2, '0');
     const seconds = Math.floor(timeLeft.asSeconds() % 60).toString().padStart(2, '0');
-    process.stdout.write(chalk.cyan(` ┊ ⏳ Menunggu siklus berikutnya: ${hours}:${minutes}:${seconds}\r`));
+    process.stdout.write(chalk.cyan(` ┊ ⏳ Waiting for next cycle: ${hours}:${minutes}:${seconds}\r`));
   }, 1000);
 }
 
@@ -739,8 +739,8 @@ async function processAccounts(accounts, professorMessages, cryptoBuddyMessages,
     const shortAddress = `${account.address.slice(0, 8)}...${account.address.slice(-6)}`;
     const usedAgents = [];
 
-    displayHeader(`═════[ Akun ${i + 1}/${accounts.length} | ${shortAddress} @ ${getTimestamp()} ]═════`, chalk.blue);
-    console.log(chalk.cyan(` ┊ ${proxy ? `Menggunakan proxy: ${proxy}` : 'Tidak menggunakan proxy'}`));
+    displayHeader(`═════[ accounts ${i + 1}/${accounts.length} | ${shortAddress} @ ${getTimestamp()} ]═════`, chalk.blue);
+    console.log(chalk.cyan(` ┊ ${proxy ? `Using proxy: ${proxy}` : 'Tidak Using proxy'}`));
 
     try {
       const { access_token, aa_address } = await authenticate(account.address, account.privateKey, proxy);
@@ -772,7 +772,7 @@ async function processAccounts(accounts, professorMessages, cryptoBuddyMessages,
           successfulChats++;
           console.log(chalk.yellow(' ┊ └──'));
         } catch (chatErr) {
-          console.log(chalk.red(` ┊ ✗ Chat ${j + 1} gagal: ${chatErr.message}`));
+          console.log(chalk.red(` ┊ ✗ Chat ${j + 1} failed: ${chatErr.message}`));
           failedChats++;
           console.log(chalk.yellow(' ┊ └──'));
         }
@@ -780,13 +780,13 @@ async function processAccounts(accounts, professorMessages, cryptoBuddyMessages,
       }
       console.log(chalk.yellow(' ┊ └──'));
 
-      console.log(chalk.magentaBright(' ┊ ┌── Proses Daily Quiz ──'));
+      console.log(chalk.magentaBright(' ┊ ┌── Daily Quiz Process ──'));
       try {
         const quiz_id = await createQuiz(account.address, access_token, proxy);
         const quizDetails = await getQuiz(quiz_id, account.address, access_token, proxy);
         await submitQuiz(quiz_id, quizDetails.question_id, quizDetails.answer, account.address, access_token, proxy);
       } catch (quizErr) {
-        console.log(chalk.red(` ┊ ✗ Gagal menyelesaikan daily quiz: ${quizErr.message}`));
+        console.log(chalk.red(` ┊ ✗ failed menyelesaikan daily quiz: ${quizErr.message}`));
       }
       console.log(chalk.yellow(' ┊ └──'));
 
@@ -805,7 +805,7 @@ async function processAccounts(accounts, professorMessages, cryptoBuddyMessages,
         });
         console.log(chalk.yellow(' ┊ └──'));
       } catch (walletErr) {
-        console.log(chalk.red(` ┊ ✗ Gagal mendapatkan info wallet: ${walletErr.message}`));
+        console.log(chalk.red(` ┊ ✗ failed mendapatkan info wallet: ${walletErr.message}`));
       }
 
       if (successfulChats > 0) {
@@ -822,8 +822,8 @@ async function processAccounts(accounts, professorMessages, cryptoBuddyMessages,
   }
 
   lastCycleEndTime = moment();
-  displayHeader(`═════[ Selesai @ ${getTimestamp()} ]═════`, chalk.blue, false);
-  console.log(chalk.gray(` ┊ ✅ ${successCount} akun sukses, ❌ ${failCount} akun gagal`));
+  displayHeader(`═════[ Finished @ ${getTimestamp()} ]═════`, chalk.blue, false);
+  console.log(chalk.gray(` ┊ ✅ ${successCount} accounts succeeded, ❌ ${failCount} accounts failed`));
   const nextRunTime = moment().add(24, 'hours');
   startCountdown(nextRunTime);
 }
@@ -832,7 +832,7 @@ let isProcessing = false;
 
 function scheduleNextRun(accounts, professorMessages, cryptoBuddyMessages, accountProxies, chatCount, noType) {
   const delay = 24 * 60 * 60 * 1000;
-  console.log(chalk.cyan(` ┊ ⏰ Proses akan diulang setiap 24 jam...`));
+  console.log(chalk.cyan(` ┊ ⏰ Process will repeat every 24 hours...`));
   setInterval(async () => {
     if (isProcessing || isSpinnerActive) return;
     try {
@@ -904,7 +904,7 @@ async function main() {
 
   let chatCount;
   while (true) {
-    const input = await promptUser('Masukkan jumlah chat per akun: ');
+    const input = await promptUser('Enter the number of chats per account: ');
     chatCount = parseInt(input, 10);
     if (!isNaN(chatCount) && chatCount > 0) break;
     console.log(chalk.red('✗ Masukkan angka yang valid!'));
@@ -912,7 +912,7 @@ async function main() {
 
   let useProxy;
   while (true) {
-    const input = await promptUser('Gunakan proxy? (y/n) ');
+    const input = await promptUser('Use proxy? (y/n) ');
     if (input.toLowerCase() === 'y' || input.toLowerCase() === 'n') {
       useProxy = input.toLowerCase() === 'y';
       break;
@@ -935,7 +935,7 @@ async function main() {
 
   const accountProxies = accounts.map((_, index) => proxies.length > 0 ? proxies[index % proxies.length] : null);
 
-  console.log(chalk.cyan(` ┊ ⏰ Memulai proses untuk ${accounts.length} akun...`));
+  console.log(chalk.cyan(` ┊ ⏰ Starting proses for${accounts.length} accounts...`));
   await processAccounts(accounts, professorMessages, cryptoBuddyMessages, accountProxies, chatCount, noType);
   scheduleNextRun(accounts, professorMessages, cryptoBuddyMessages, accountProxies, chatCount, noType);
   rl.close();
