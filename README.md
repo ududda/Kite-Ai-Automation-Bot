@@ -1,4 +1,4 @@
-# 🚀 Kite AI Auto-Bot CDY
+# 🚀 Kite AI Automation-Bot CDY
 
 **Kite AI Auto-Bot** is a next-gen JavaScript automation tool for interacting with the **KiteAI testnet** ecosystem and its forks (like GoKite, Pharos, Interlink). Perform XP farming, daily rewards, and AI agent chats using multiple wallets — all on autopilot 💼🤖
 
@@ -185,6 +185,3 @@ Love this tool? Help us improve:
 This project is licensed under the MIT License.
 
 ---
-
-Let me know if you'd like me to save this into a `README.md` file or push it to your GitHub repo (if you've set up SSH or PAT). Ready when you are.
-
