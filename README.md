@@ -1,132 +1,190 @@
-# 🚀 Kite Ai Automation Bot
+# 🚀 Kite AI Auto-Bot CDY
 
-**Kite Ai Automation Bot** is a JavaScript-powered automation script built to simplify and speed up your grind on the Kite 🌬️ Ozone app. Automate boring tasks like wallet ops and messaging with just a few clicks and a config tweak 💻✨.
-
----
-
-## ⚙️ Features
-
-- 📨 **Automated Messaging:**  
-  Auto-send custom messages using templates like `pesan_professor.txt` and `pesan_cryptobuddy.txt`.
-
-- 👛 **Wallet Management:**  
-  Securely manage wallets using private keys from `accounts.txt`.
-
-- 🕵️ **Proxy Support:**  
-  Use `proxy.txt` to stay private and rotate IPs with ease.
-
-- 🛠️ **Simple Configuration:**  
-  One `package.json` to rule them all — easy setup, fast launch.
+**Kite AI Auto-Bot** is a next-gen JavaScript automation tool for interacting with the **KiteAI testnet** ecosystem and its forks (like GoKite, Pharos, Interlink). Perform XP farming, daily rewards, and AI agent chats using multiple wallets — all on autopilot 💼🤖
 
 ---
 
-## 🧩 Installation
+## ✨ Features
 
-1. **📥 Prerequisites:**  
-   Make sure you have [Node.js](https://nodejs.org/) installed.
+* 🧠 **Agent Interactions** 
+  Auto-chat with Professor, Crypto Buddy, and Sherlock using customizable prompts.
 
-2. **📦 Clone the Repo:**  
-```
-git clone https://github.com/cryptodai3/Kite-Ai-Automation-Bot.git
-  ````
+* 💧 **Daily Faucet Claim**
+  Automatically solve CAPTCHA and claim daily KITE tokens.
 
-3. **📁 Go to the Folder:**
+* 📈 **Staking Automation**
+  Automatically stake KITE, claim rewards, and track returns.
 
- ```
-   cd Kite-Ai-Automation-Bot
-   ```
+* 👛 **Multi-Wallet Support**
+  Easily manage and rotate between multiple wallets.
 
-4. **📚 Install Dependencies:**
+* 🧮 **Smart Analytics**
+  Monitor XP points, token balances, and staking data in real-time.
 
-```
-   npm install
-   ```
+* 🕒 **Scheduled Execution**
+  Re-runs itself every 24h with built-in countdown logic.
 
-5. **🔐 Add Wallets:**
-   Paste your private keys (one per line) inside `accounts.txt`:
-
-```
-   nano accounts.txt
-   ```
-
-   Save and exit with `Ctrl + X`, then `Y`, then `Enter`.
-
-6. **🌐 (Optional) Add Proxies:**
-   Insert your proxy list (one per line) inside `proxy.txt`.
-```
-   nano proxy.txt
-   ```
-
-7. **✏️ (Optional) Edit Messages:**
-
-   * `pesan_professor.txt`: For professor-style messages.
-   * `pesan_cryptobuddy.txt`: For cryptobuddy-style messages.
+* 🌐 **Proxy Support** *(Optional)*
+  Supports rotating proxies via `proxy.txt` or `config.json`.
 
 ---
 
-## 🚀 How to Use
+## 📋 Prerequisites
 
-Fire up the bot like a pro:
+Make sure you have:
+
+* [Node.js v16+](https://nodejs.org/)
+* At least one Ethereum-compatible private key
+* [2Captcha API key](https://2captcha.com/) *(if using faucet auto-claim)*
+* Access to KiteAI testnet: [testnet.gokite.ai](https://testnet.gokite.ai/?referralCode=ODMG4EWE)
+
+---
+
+## ⚙️ Installation
+
+1. **Clone the repository**
 
 ```bash
-npm start
+git clone https://github.com/cryptodai3/Kite-Ai-Automation-Bot.git
+```
+```bash
+cd Kite-Ai-Automation-Bot
 ```
 
-It'll read from your config files and run all tasks automatically 🤖💨.
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Create environment file**
+
+```bash
+cp .env.example .env
+```
+
+4. **Edit `nano .env`** with your private key(s):
+
+```env
+PRIVATE_KEY_1=your_private_key_here
+PRIVATE_KEY_2=optional_private_key
+```
 
 ---
 
-## 🧠 Contributing
+## 🚀 Usage
 
-Wanna help improve this beast?
+To start the bot:
 
-1. Fork it 🍴
-2. Create your branch: `git checkout -b feature/cool-feature`
-3. Commit changes: `git commit -am 'Add magic'`
-4. Push to your fork: `git push origin feature/cool-feature`
-5. Open a PR and flex 💪
+```bash
+node index.js
+```
 
----
+What it does:
 
-## 📜 License
-
-Licensed under the MIT License — free to use, modify, share.
-
----
-
-## 💬 Need Help?
-
-Join the convo or report bugs:
-👉 [Open an Issue](https://github.com/cryptodai3/Kite-Ai-Automation-Bot/issues)
+1. Logs into each wallet
+2. Claims faucet rewards
+3. Stakes tokens & claims rewards
+4. Chats with AI agents
+5. Waits and schedules the next run in 24h
 
 ---
 
-## ✨ Shoutout
+## 💰 Wallet Setup
 
-* Built by [cryptodai3](https://t.me/cryptodai3) 🧠
-* Supported by the 💚 Web3 farming fam
+1. Get ETH from a testnet faucet
+2. Visit [KiteAI Testnet](https://testnet.gokite.ai/?referralCode=ODMG4EWE)
+3. Claim initial KITE
+4. Stake at least 1 KITE to start earning XP and rewards
 
 ---
 
-## 🙌 Support Us
+## 🧠 Troubleshooting
 
-If this bot saved you time, energy, or gas fees:
+* **Invalid private key** – Ensure key starts with `0x`
+* **Captcha not solving** – Check 2Captcha balance/API key
+* **Staking failed** – Make sure you have KITE & testnet ETH
 
-* 💰 Use our referral links
-* 🔁 Share the repo
-* 🧠 Drop ideas, report bugs
+---
+
+## 🔒 Security Notes
+
+* Private keys are stored securely in `.env` (never commit this!)
+* Proxy and network handling are sandboxed
+* All interactions are with official Kite endpoints
+* Code is open-source for review and auditing
+
+---
+
+## 🤝 Contribution
+
+Pull requests are welcome!
+Fork it, make your change, and open a PR.
+For major changes, open an issue first.
 
 ---
 
 ## ⚠️ Disclaimer
 
-This tool is **testnet-only** 🧪 and **no warranty** is provided.
-Use at your own risk. We’re not responsible for any loss, error, or moon crash 🌕
+This is an **unofficial tool**, built for educational and testing purposes only.
+Use at your own risk. We take no responsibility for any loss or moon crashes 🌝💥
 
 ---
 
-## 📄 License
+## 📜 License
 
 [MIT License](LICENSE)
 
 ---
+
+## Happy Farming! 🚀🌾
+
+*Brought to you by [CryptoDai3](https://t.me/cryptodai3) X [YetiDAO](https://t.me/YetiDAO)*
+
+---
+
+## ☕ Buy Me a Coffee
+
+* **EVM:** `0x49bb35693e9631760d2f3519e7db1dd618580a6a`
+* **TON:** `UQDDYNRWZI12zMfXYBoy300ydECC5uouMUFLd_yZa6ZO4Jsm`
+* **SOL:** `2PhLDFnyX8whHDMBbfGSFoLnVEsei6TYxyiqpDzPGyT1`
+* **SUI:** `0xf3b008f8aac4b92195176aad27a892c565c216fd5c07bc99c70edb8394e23b59`
+
+---
+
+## 🔒 Safety & Support
+
+### ⚠️ Important Disclaimer
+
+* **Testnet Only** – This tool is designed for testnet environments only
+* **No Liability** – Use at your own risk. Developers assume no responsibility
+* **DYOR** – Always do your own research before using any automation tools
+
+### 🛡️ Security Best Practices
+
+* 🔐 Never use Main wallets
+* 🚫 Never expose sensitive credentials
+* 📜 Always review code before execution
+* 💸 Use burner wallets with test tokens only
+
+---
+
+### 🙌 Support Our Work
+
+Love this tool? Help us improve:
+
+* ⭐ Star the repository
+* 🔗 Share with your farming community
+* 💎 Use our referral codes (where applicable)
+* 💡 Contribute ideas and code
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+---
+
+Let me know if you'd like me to save this into a `README.md` file or push it to your GitHub repo (if you've set up SSH or PAT). Ready when you are.
+
