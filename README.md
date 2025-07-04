@@ -1,142 +1,111 @@
-# 🚀 Kite AI Automation-Bot CDY
+# Kite AI Automation BOT V2.0 (PYTHON)
 
-**Kite AI Auto-Bot** is a next-gen JavaScript automation tool for interacting with the **KiteAI testnet** ecosystem and its forks (like GoKite, Pharos, Interlink). Perform XP farming, daily rewards, and AI agent chats using multiple wallets — all on autopilot 💼🤖
+Fully automated bot to interact with **Kite AI Ozone** tasks on the testnet!  
+Sign up, complete social tasks, faucet claims, quizzes, and earn testnet rewards — fully automated. 🤖
 
----
-
-## ✨ Features
-
-* 🧠 **Agent Interactions** 
-  Auto-chat with Professor, Crypto Buddy, and Sherlock using customizable prompts.
-
-* 💧 **Daily Faucet Claim**
-  Automatically solve CAPTCHA and claim daily KITE tokens.
-
-* 📈 **Staking Automation**
-  Automatically stake KITE, claim rewards, and track returns.
-
-* 👛 **Multi-Wallet Support**
-  Easily manage and rotate between multiple wallets.
-
-* 🧮 **Smart Analytics**
-  Monitor XP points, token balances, and staking data in real-time.
-
-* 🕒 **Scheduled Execution**
-  Re-runs itself every 24h with built-in countdown logic.
-
-* 🌐 **Proxy Support** *(Optional)*
-  Supports rotating proxies via `proxy.txt` or `config.json`.
+- 🌐 Register Here: [Kite AI Ozone](https://testnet.gokite.ai?referralCode=ODMG4EWE)
+- 🧠 Connect New EVM Wallet
+- 💬 Connect Social Media
+- ✅ Complete Available Daily Tasks
 
 ---
 
-## 📋 Prerequisites
+## ⚙️ Features
 
-Make sure you have:
-
-* [Node.js v16+](https://nodejs.org/)
-* At least one Ethereum-compatible private key
-* [2Captcha API key](https://2captcha.com/) *(if using faucet auto-claim)*
-* Access to KiteAI testnet: [testnet.gokite.ai](https://testnet.gokite.ai/?referralCode=ODMG4EWE)
+- ✅ Auto Get Account Info
+- ✅ Proxy Modes  
+  - Public Proxy via [Proxyscrape](https://proxyscrape.com/free-proxy-list) (Choose 1)  
+  - Private Proxy (Choose 2)  
+  - No Proxy (Choose 3)  
+- 🔄 Auto Rotate Invalid Proxies (Yes / No)
+- 💧 Auto Faucet Claim *(Requires 2captcha Key)*
+- 📚 Auto Daily Quiz Completion
+- 💸 Auto Stake & Unstake KITE Tokens
+- 🤖 Auto Interact With Kite AI Agents (30x)
+- 👥 Multi-Account Threading Support
 
 ---
 
-## ⚙️ Installation
+## 📦 Requirements
 
-1. **Clone the repository**
+- Python 3.9+  
+- `pip` installed  
+- Optional: 2captcha API key
 
+---
+
+## 🔧 Installation
+
+1. **Clone This Repository**
 ```bash
 git clone https://github.com/cryptodai3/Kite-Ai-Automation-Bot.git
-```
-```bash
 cd Kite-Ai-Automation-Bot
-```
+````
 
-2. **Install dependencies**
-
-```bash
-npm install
-```
-
-3. **Create environment file**
+2. **Install Dependencies**
 
 ```bash
-cp .env.example .env
+pip install -r requirements.txt
 ```
 
-4. **Edit `nano .env`** with your private key(s):
+> 💡 *If you encounter version errors (e.g., eth-account, cryptography), fix manually:*
 
-```env
-PRIVATE_KEY_1=your_private_key_here
-PRIVATE_KEY_2=optional_private_key
-```
-
----
-
-## 🚀 Usage
-
-To start the bot:
+* Check current version:
 
 ```bash
-node index.js
+pip show eth-account
 ```
 
-What it does:
+* Uninstall conflicting library:
 
-1. Logs into each wallet
-2. Claims faucet rewards
-3. Stakes tokens & claims rewards
-4. Chats with AI agents
-5. Waits and schedules the next run in 24h
+```bash
+pip uninstall eth-account
+```
 
----
+* Install correct version:
 
-## 💰 Wallet Setup
-
-1. Get ETH from a testnet faucet
-2. Visit [KiteAI Testnet](https://testnet.gokite.ai/?referralCode=ODMG4EWE)
-3. Claim initial KITE
-4. Stake at least 1 KITE to start earning XP and rewards
+```bash
+pip install eth-account==VERSION
+```
 
 ---
 
-## 🧠 Troubleshooting
+## 🛠️ Configuration
 
-* **Invalid private key** – Ensure key starts with `0x`
-* **Captcha not solving** – Check 2Captcha balance/API key
-* **Staking failed** – Make sure you have KITE & testnet ETH
+* `nano accounts.txt` — EVM Wallets (EOAs):
 
----
+```txt
+your_wallet_address_1
+your_wallet_address_2
+```
 
-## 🔒 Security Notes
+* `nano 2captcha_key.txt` — 2Captcha API Key (for faucet claim):
 
-* Private keys are stored securely in `.env` (never commit this!)
-* Proxy and network handling are sandboxed
-* All interactions are with official Kite endpoints
-* Code is open-source for review and auditing
+```txt
+your_2captcha_key
+```
 
----
+* `nano proxy.txt` — Add your proxies:
 
-## 🤝 Contribution
-
-Pull requests are welcome!
-Fork it, make your change, and open a PR.
-For major changes, open an issue first.
-
----
-
-## ⚠️ Disclaimer
-
-This is an **unofficial tool**, built for educational and testing purposes only.
-Use at your own risk. We take no responsibility for any loss or moon crashes 🌝💥
+```txt
+ip:port
+http://ip:port
+http://user:pass@ip:port
+```
 
 ---
 
-## 📜 License
+## 🚀 Running the Bot
 
-[MIT License](LICENSE)
+```bash
+python bot.py
+# or
+python3 bot.py
+```
+
+Follow the on-screen prompts to choose proxy mode, captcha setup, and execution method.
 
 ---
-
 ## Happy Farming! 🚀🌾
 
 *Brought to you by [CryptoDai3](https://t.me/cryptodai3) X [YetiDAO](https://t.me/YetiDAO)*
@@ -177,11 +146,5 @@ Love this tool? Help us improve:
 * 🔗 Share with your farming community
 * 💎 Use our referral codes (where applicable)
 * 💡 Contribute ideas and code
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License.
 
 ---
