@@ -10,36 +10,29 @@ const readline = require('readline').createInterface({
 const fs = require('fs').promises;
 
 const colors = {
-  reset: "\x1b[0m",
-  bright: "\x1b[1m",
-  green: "\x1b[32m",
-  greenBright: "\x1b[92m",
-  cyan: "\x1b[36m",
-  yellow: "\x1b[33m",
-  magenta: "\x1b[35m",
-  white: "\x1b[37m",
+  green: '\x1b[32m',
+  yellow: '\x1b[33m',
+  red: '\x1b[31m',
+  white: '\x1b[37m',
+  cyan: '\x1b[36m',
+  reset: '\x1b[0m',
+  bold: '\x1b[1m'
 };
 
 const logger = {
   info: (msg) => console.log(`${colors.green}[✓] ${msg}${colors.reset}`),
-  warn: (msg) => console.log(`${colors.yellow}[⚠] ${msg}${colors.reset}`),
-  error: (msg) => console.log(`${colors.magenta}[✗] ${msg}${colors.reset}`),
-  success: (msg) => console.log(`${colors.greenBright}[✅] ${msg}${colors.reset}`),
+  wallet: (msg) => console.log(`${colors.yellow}[➤] ${msg}${colors.reset}`),
+  error: (msg) => console.log(`${colors.red}[✗] ${msg}${colors.reset}`),
+  success: (msg) => console.log(`${colors.green}[] ${msg}${colors.reset}`),
   loading: (msg) => console.log(`${colors.cyan}[⟳] ${msg}${colors.reset}`),
   step: (msg) => console.log(`${colors.white}[➤] ${msg}${colors.reset}`),
-
   banner: () => {
-    console.clear();
-    console.log(colors.greenBright + colors.bright + '\n' + '═'.repeat(60));
-    console.log(colors.green + colors.bright + '    ⚡ Kite Ai Automation BOT ⚡');
-    console.log(colors.cyan + colors.bright + '    ────────────────────────────────');
-    console.log(colors.yellow + colors.bright + '    🧠 Project    : Kite Ai - Automation Bot');
-    console.log(colors.yellow + colors.bright + '    🧑‍💻 Author     : YetiDAO');
-    console.log(colors.yellow + colors.bright + '    🌐 Status     : Running & Monitering...');
-    console.log(colors.cyan + colors.bright + '    ────────────────────────────────');
-    console.log(colors.magenta + colors.bright + '    🧬 Powered by Cryptodai3 × YetiDAO | Buddy v2.0 🚀');
-    console.log(colors.greenBright + colors.bright + '═'.repeat(60) + '\n' + colors.reset);
-  }
+    console.log(`${colors.cyan}${colors.bold}`);
+    console.log('---------------------------------------------');
+    console.log('     Kite AI Automation Bot - YetiDAO ');
+    console.log(`---------------------------------------------${colors.reset}\n`);
+  },
+  agent: (msg) => console.log(`${colors.white}${msg}${colors.reset}`)
 };
 
 const agents = [
